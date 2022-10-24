@@ -17,37 +17,57 @@ function playOneRound(playerSelection, computerSelection){
     // Play game to check who wins
     if(playerSelection === 'rock'){
         if(computerSelection === 'rock'){
-            result = `It's a tie!`
+            result = `It's a tie! Score: ${playerScore} to ${computerScore}`
         } else if(computerSelection === 'scissors'){
             playerScore++
-            result = `You win! Rock beats Scissors.`
+            result = `You win! Rock beats Scissors. Score: ${playerScore} to ${computerScore}`
         } else if(computerSelection === 'paper') {
-            result = `You lose! Paper beats Rock`
             computerScore++
+            result = `You lose! Paper beats Rock. Score: ${playerScore} to ${computerScore}`
         }
+
     } else if(playerSelection === 'paper'){
         if(computerSelection === 'rock'){
-            result = `You win! Paper beats Rock`
             playerScore++
+            result = `You win! Paper beats Rock. Score: ${playerScore} to ${computerScore}`
+            
         } else if(computerSelection === 'scissors'){
-            result = `You lose! Scissors beats Paper`
             computerScore++
+            result = `You lose! Scissors beats Paper. Score: ${playerScore} to ${computerScore}`
         } else if(computerSelection === 'paper') {
-            result = `It's a tie`
+            result = `It's a tie. Score: ${playerScore} to ${computerScore}`
         }
+
     } else if(playerSelection === 'scissors'){
         if(computerSelection === 'scissors'){
-            result = `It's a tie`
+            result = `It's a tie. Score: ${playerScore} to ${computerScore}`
         } else if(computerSelection === 'paper'){
-            result = `You win! Scissors beats Paper`
             playerScore++
+            result = `You win! Scissors beats Paper. Score: ${playerScore} to ${computerScore}`
+            
         } else if(computerSelection === 'rock') {
-            result = `You lose! Rock beats Scissors`
             computerScore++
+            result = `You lose! Rock beats Scissors. Score: ${playerScore} to ${computerScore}`
         }
     }
 
     return result
 }
 
-
+function game(){
+    
+    for(i = 0; i < 5; i++){
+        const playerSelection = prompt('Choose among Rock, Paper or Scissors').toLowerCase()
+        const computerSelection = getComputerChoice()
+        console.log(playOneRound(playerSelection,computerSelection))
+    }
+    
+    if(playerScore > computerScore){
+        console.log(`Congratulations! You win by ${playerScore} to ${computerScore}`)
+    } else if(computerScore > playerScore){
+        console.log(`Game over!! You lose by ${playerScore} to ${computerScore}`)
+    } else {
+        console.log(`Draw! Play again`)
+    }
+}
+game()

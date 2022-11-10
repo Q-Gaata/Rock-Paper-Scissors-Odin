@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(213, 19%, 18%);
+  height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 100px auto;
+    background-color:hsl(217, 12%, 63%);
+    padding: 20px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.btn {
+    padding: 15px 30px;
+    background: hsl(216, 12%, 8%);
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.small {
+    font-size: 20px;
+}
+.result {
+    font-size: 25px;
+    margin: 20px auto;
+    transition: all 0.6s ease;
+    transform: translateX(-30px);
+    font-family: 'Kanit', sans-serif;
+}
+
+.result.trans {
+    transform: translateX(0);
+}
+
+.players-button {
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.participants {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin-top: 20px;
+}
+
+.participants p {
+    font-family: 'Lobster', sans-serif;
+    font-size: 30px;
+}
+
+button.play {
+    display: none;
+    
+}
+button.play:hover{
+    background-color: ;
+}
